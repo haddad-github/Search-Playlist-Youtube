@@ -15,7 +15,8 @@ def lookFor(file, look_for, inside):
 
         elif inside == 'author' or inside == 'channel' or inside == 'uploader':
             inside = 4
-
+        
+        #Regex option (IGNORECASE) to make it case insensitive (ex: titles can contain "bUttErfLY", etc.)
         for row in csvreader:
             if re.search(look_for, row[inside], re.IGNORECASE):
                 print(row[0] + " |--> " + row[1] + f" [AUTHOR: {row[4]}]")
